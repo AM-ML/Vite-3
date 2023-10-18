@@ -3,6 +3,10 @@ import { MainLayout } from './pages/MainLayout'
 import { Home } from './pages/Home'
 import { Book } from './pages/Book'
 import './App.css'
+import { NotFound } from './pages/NotFound';
+import { Books } from './pages/Books';
+import { Pricing } from './pages/Pricing';
+import { BookPage } from './pages/BookPage';
 
 function App() {
   return (
@@ -12,7 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />}/>
-          <Route path=":id" element={<Book />} />
+          <Route path="books" element={<Books />} />
+          <Route path="books/:bookId" element={<BookPage />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="*" element={<NotFound />}/>
         </Route>
       </Routes>
     </>
